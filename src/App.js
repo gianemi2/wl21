@@ -24,7 +24,7 @@ const App = () => {
 
     useEffect(() => {
         handleCalculateScore('Finisci di inserire i dati. Se credi di aver terminato, i valori non sono corretti. ')
-    }, [remainingMatch, totalPoints])
+    }, [remainingMatch, totalPoints, handleCalculateScore])
 
     const onFinish = (values) => {
         handleCalculateScore('I valori inseriti non possono essere corretti. ')
