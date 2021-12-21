@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { InputNumber, Typography, Space, Button } from 'antd';
 import { HeartTwoTone } from '@ant-design/icons'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
@@ -11,7 +11,7 @@ const App = () => {
     const [remainingMatch, setRemainingMatch] = useState(20)
     const [totalPoints, setTotalPoints] = useState(0)
 
-    const handleCalculateScore = (resultCallback = '') => {
+    const handleCalculateScore = useCallback((resultCallback = '') => {
         const { wins, loss, error } = calculateScore(remainingMatch, totalPoints)
         if (!error) {
             setResult(`Vittorie: ${wins}. Sconfitte: ${loss}`)
@@ -20,7 +20,7 @@ const App = () => {
             setResult(resultCallback)
             setError(error)
         }
-    }
+    }, [remainingMatch, totalPoints])
 
     useEffect(() => {
         handleCalculateScore('Finisci di inserire i dati. Se credi di aver terminato, i valori non sono corretti. ')
