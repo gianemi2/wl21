@@ -32,6 +32,9 @@ const App = () => {
 
     return (
         <div>
+            <div style={headerStyle}>
+                <Typography.Text>Fatto con <HeartTwoTone twoToneColor="#eb2f96" /> a Livorno da Marco Giannini</Typography.Text>
+            </div>
             <div style={bodyStyle}>
                 <Space direction='vertical' style={{ maxWidth: '100%', width: '450px' }}>
                     <Typography.Title>Calcolatore punteggio WL</Typography.Title>
@@ -67,9 +70,7 @@ const App = () => {
                             : false}
                 </Space>
             </div>
-            <div style={footerStyle}>
-                <Typography.Text>Fatto con <HeartTwoTone twoToneColor="#eb2f96" /> a Livorno da Marco Giannini</Typography.Text>
-            </div>
+
         </div>
     );
 };
@@ -83,8 +84,8 @@ const bodyStyle = {
     justifyContent: 'center'
 }
 
-const footerStyle = {
-    height: 40,
+const headerStyle = {
+    minHeight: 40,
     width: '100vw',
     display: 'flex',
     alignItems: 'center',
