@@ -3,6 +3,7 @@ import { InputNumber, Typography, Space, Button } from 'antd';
 import { HeartTwoTone } from '@ant-design/icons'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import calculateScore from './calculateScore'
+import logo from './logo192.png'
 
 const App = () => {
 
@@ -35,15 +36,18 @@ const App = () => {
             <div style={headerStyle}>
                 <Typography.Text>Fatto con <HeartTwoTone twoToneColor="#eb2f96" /> a Livorno da Marco Giannini</Typography.Text>
             </div>
+            <div style={{ display: "flex", justifyContent: 'center', backgroundColor: '#fffdd0' }}>
+                <img style={logoStyle} src={logo} alt="" />
+            </div>
             <div style={bodyStyle}>
                 <Space direction='vertical' style={{ maxWidth: '100%', width: '450px' }}>
-                    <Typography.Title>Calcolatore punteggio WL</Typography.Title>
-                    <Space align='end' style={{ marginTop: 40, width: '100%' }}>
+                    <Typography.Title level={3}>Calcolatore punteggio WL</Typography.Title>
+                    <Space align='end' style={{ width: '100%' }}>
                         <label htmlFor="remainingMatches">
                             Match rimasti <br />
                             <InputNumber
                                 id="remainingMatches"
-                                style={{ width: '100%' }}
+                                style={{ width: '100%', fontSize: 16 }}
                                 placeholder='Match rimasti'
                                 min={0}
                                 max={20}
@@ -54,7 +58,7 @@ const App = () => {
                             Punti totali <br />
                             <InputNumber
                                 id="totalPoints"
-                                style={{ width: '100%' }}
+                                style={{ width: '100%', fontSize: 16 }}
                                 placeholder='Punti totali'
                                 min={0}
                                 max={80}
@@ -77,8 +81,9 @@ const App = () => {
 
 const bodyStyle = {
     padding: '50px 10px',
-    backgroundColor: '#fafafa',
-    height: 'calc( 100vh - 40px )',
+    backgroundColor: '#fffdd0',
+    background: 'linear-gradient(to bottom, #fffdd0, #cfca80)',
+    height: 'calc( 100vh - 240px )',
     width: '100vw',
     display: 'flex',
     justifyContent: 'center'
@@ -89,13 +94,19 @@ const headerStyle = {
     width: '100vw',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#fffdd0'
 }
 
 const disclaimerStyle = {
     padding: 10,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#fffdd0',
     marginTop: 10
+}
+
+const logoStyle = {
+    maxWidth: "100%",
+    width: 200
 }
 
 export default App
